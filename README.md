@@ -1,7 +1,11 @@
 # Porkbun scripts for certbot
 
+> This project is a fork of [mmsaffari/porkbun_certbot_auth](https://github.com/mmsaffari/porkbun_certbot_auth).
+>
+> The motivation for the fork was because I was not interested having a dependency on Python as everything could be easily done in bash. I decided to fork it and open a pull request but I did not get any reply by the main author. So I decided to keep the fork and keep maintaning it.
+
 Issuing wildcard domain certificates with certbot, when your dns server is not one of the famous ones like CloudFlare, DigitalOcean, etc., can be a cumbersome task. Here I will try to provide a walkthrough for when you are managing your domain's DNS records on https://porkbun.com.
-There are plugins for PorkBunäs DNS challenge on `snap` or `PyPI` but connecting certbot to those plugins didn't really work for me, and moreover, why should I install more beta or RC packages when it can be solved using a couple of script files?
+There are plugins for PorkBun's DNS challenge on `snap` or `PyPI` but connecting certbot to those plugins didn't really work for me, and moreover, why should I install more beta or RC packages when it can be solved using a couple of script files?
 Let's get our hands dirty!
 
 ## Prerequisites
@@ -32,7 +36,7 @@ apt install jq -y
 
 ## Get your certificates
 
-That's all! You should be able to fetch a new wildcard certificate for you domain as easy as running the following command. **Remeber to replace your email and domain names before running it**.
+That's all! You should be able to fetch a new wildcard certificate for you domain as easy as running the following command. **Remeber to replace your email, domain names, and script paths before running it**.
 
 ```bash
 certbot certonly \
@@ -56,5 +60,6 @@ Viel Spaß!
 
 1. https://eff-certbot.readthedocs.io/en/stable/using.html#hooks
 2. https://porkbun.com/api/json/v3/documentation
+3. https://github.com/mmsaffari/porkbun_certbot_auth
 
 ---
