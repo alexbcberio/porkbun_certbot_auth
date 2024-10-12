@@ -17,7 +17,7 @@ PAYLOAD="{
 	\"type\": \"TXT\",
 	\"content\": \"$CERTBOT_VALIDATION\"
 }"
-RESULT=$(curl -s -X POST "https://porkbun.com/api/json/v3/dns/create/$DOMAIN" -H "Content-Type: application/json" --data "$PAYLOAD")
+RESULT=$(curl -s -X POST "https://api.porkbun.com/api/json/v3/dns/create/$DOMAIN" -H "Content-Type: application/json" --data "$PAYLOAD")
 
 RESULT_DIRNAME=/tmp/CERTBOT_$CERTBOT_DOMAIN
 # Save info for cleanup

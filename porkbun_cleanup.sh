@@ -28,6 +28,6 @@ PAYLOAD="{
 }"
 # Remove the challenge TXT record from the zone
 if [ -n "${RECORD_ID}" ]; then
-    CLEANUP_RESULT=$(curl -s -X POST "https://porkbun.com/api/json/v3/dns/delete/$DOMAIN/$RECORD_ID" -H "Content-Type: application/json" --data "$PAYLOAD")
+    CLEANUP_RESULT=$(curl -s -X POST "https://api.porkbun.com/api/json/v3/dns/delete/$DOMAIN/$RECORD_ID" -H "Content-Type: application/json" --data "$PAYLOAD")
     echo $CLEANUP_RESULT > /tmp/CERTBOT_$CERTBOT_DOMAIN/CLEANUP_RESULT
 fi
